@@ -1,0 +1,49 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+body{
+	width: 100%;
+	background: #333;
+}
+.main-body{
+	margin: 10px auto;
+	max-width: 1000px;
+	width: 100%;
+}
+.second-body{
+	margin: 0 10px;
+	padding: 10px;
+	width: calc(100% - 20px);
+	background: #fff;
+}
+.question{
+	margin-top: 10px;
+	width: 100%;
+}
+.answer{
+	width: 100%;
+	margin-top: 5px;
+}
+.answer input{
+	padding: 10px;
+}
+.answer input[type="text"]{
+	width: 100%;
+}
+.answer textarea{
+	width: 100%;
+	padding: 10px;
+}
+.content-radio{
+	width: 100%;
+	display: flex;
+}
+.content-radio input[type="radio"]{
+	margin: 5px;
+}
+.content-radio label{
+	margin: 5px;
+}
