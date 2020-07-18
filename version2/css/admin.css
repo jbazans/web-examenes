@@ -1,0 +1,54 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+body{
+	width: 100%;
+}
+.main-body{
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+}
+label{
+	font-weight: 600;
+}
+input,textarea{
+	padding: 10px;
+	width: 100%;
+}
+input[type="radio"]{
+	width: 20px;
+}
+button,select{
+	padding: 10px;
+	width: auto;
+	cursor: pointer;
+}
+.mt10{
+	margin-top: 10px;
+}
+.mb10{
+	margin-bottom: 10px;
+}
+.body-examen{
+	width: 100%;
+}
+.item-examen{
+	display: flex;
+	flex-direction: column;
+	border:1px solid #ccc;
+	padding: 10px;
+	width: 100%;
+	margin-top: 10px;
+}
+.item-examen:nth-child(1){
+	margin-top: 0;
+}
+.content-radio{
+	display: flex;
+	padding: 5px;
+}
