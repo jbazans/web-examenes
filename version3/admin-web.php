@@ -94,8 +94,48 @@
 					
 				'</div>'+
 			'</div>';
-			document.getElementById("body-examen").innerHTML+=html;
+			document.getElementById("body-examen").insertAdjacentHTML('beforeend',html);
 			num_id++;
+		}
+		function save_examen(){
+			let nomexa=document.getElementById("tituloexamen").value;
+			if (nomexa=="") {
+				alert("Debe poner nombre de examen");
+				return;
+			}
+			let ar_pregunta=document.getElementsByClassName("item-examen");
+			let aux=[];
+			for (var i = 0; i < ar_pregunta.length; i++) {
+				let id=ar_pregunta[i].id.replace("item-","");
+				let nompre=document.getElementById("question-"+id).value;
+				if (nompre!="") {
+					let codtipres=document.getElementById("type-"+id).value;
+					let aux_pre=[];
+					aux_pre.push(nompre);
+					aux_pre.push(codtipres);
+					if (codtipres=="4") {
+						let ar_alternativas=document.getElementById("preview-"+id).getElementsByClassName("content-radio");
+						let aux_alt=[];
+						for (var j = 0; j < ar_alternativas.length; j++) {
+							aux_alt.push(ar_alternativas[j].getElementsByTagName("label")[0].innerHTML);
+						}
+						aux_pre.push(aux_alt);
+					}
+					aux.push(aux_pre);
+				}
+			}
+			console.log(aux);
+			let fd=new FormData();
+			fd.append("nomexa",nomexa);
+			fd.append("array",aux);
+			let request=new XMLHttpRequest();
+			request.open('POST','api/save_examen.php',true);
+			request.onload=function(){
+				if (request.readyState==4 && request.status==200) {
+					console.log(request.responseText);
+				}
+			}
+			request.send(fd);
 		}
 	</script>
 </body>

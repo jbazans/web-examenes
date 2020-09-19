@@ -6,6 +6,13 @@ create table tipres(
 )ENGINE InnoDB
 CHARACTER SET latin1 COLLATE latin1_spanish_ci;
 
+INSERT INTO tipres (codtipres,nomtipres,estado)
+VALUES
+(1,'Número',1),
+(2,'Texto corto',1),
+(3,'Texto largo',1),
+(4,'Alternativa múltiple',1);
+
 create table examen(
 	codexa int not null AUTO_INCREMENT,
 	nomexa varchar(100) not null,
